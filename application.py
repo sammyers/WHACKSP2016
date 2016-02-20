@@ -15,7 +15,7 @@ def ideavote():
 	#will check to see if one of the objects has passed the upvote threshold
 	#if yes, then return rankings screen
 	#if no, then re-run this code
-
+    pass
 
 if __name__ == '__main__':
 	application.run(debug=True)
