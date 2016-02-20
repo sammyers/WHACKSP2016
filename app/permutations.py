@@ -1,7 +1,12 @@
 ''' Returns a list of all posible combinations'''
-#ideas = whack2016.query.all()
-
+from models import Idea
+from database import db_session
 import itertools
+print(1)
+ideas = Idea.query.all()
+print(2)
+
+#names = [idea.name for idea in ideas]
 
 # def combinations(iterable, r):
 #     # combinations('ABCD', 2) --> AB AC AD BC BD CD
