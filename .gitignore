@@ -1,4 +1,5 @@
-
+*.pyc
+constants.py
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

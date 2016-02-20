@@ -1,3 +1,6 @@
+from models import Idea
+from database import db_session
+
 """ Expects to be able to find 2 ratings from the database """
 """depricated"""
 
