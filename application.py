@@ -3,7 +3,7 @@ from flask import render_template
 from app import application
 from app.database import db_session
 
-@application.route('/')
+@application.route('/') # homepage URL endpoint
 def index():
 	string = 'Hello World'
 	return render_template('index.html', hello=string)
