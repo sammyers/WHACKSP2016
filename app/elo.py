@@ -1,10 +1,13 @@
+from database import db_session
+from models import Idea
+
 """ Expects to be able to find 2 ratings from the database """
 
 #Picks the two relevant nodes from the database based on some criteria to give everything a chance.
-ideas = whack2016.query.all()
-ideas_ranked = db.session.query(whack2016).order_by(idea.votes.desc())
+ideas = Idea.query.all()
+ideas_ranked = Idea.query.order_by(Idea.views.desc())
 factor = len(ideas)/4
-validIdeas = db.session.query.filter(Idea.passed < factor).all()
+validIdeas = db.session.query.filter_by(Idea.passed < factor).all()
 
 #Things I want
 #drop all that have been rejecteded more than n times, when n is based on list length
