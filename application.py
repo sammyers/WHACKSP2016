@@ -17,8 +17,10 @@ def objectvoting():
 	submission = SubmitForm(request.form)
 	all_ideas = Idea.query.all()
 	#two_objects = #Ian's method for two objects
-	left_object = two_objects[0]
-	right_object = two_objects[1]
+	left_object = random.choice(all_ideas)
+	right_object = random.choice(all_ideas)
+	while left_object == right_object:
+		right_object = random.choice(all_ideas)
 	#then allow for clicking and choosing which one to vote
 	return render_template('index.html', left_object=left_object, 
 										 right_object=right_object,
