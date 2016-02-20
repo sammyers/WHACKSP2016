@@ -1,0 +1,9 @@
+<nav>
+    <img src="imagelinkhere.jpg" alt="logo" id="navfigure">
+
+    <ul>
+        <li id="liContact" class="navitem"><a href="title1.html">Contact Us</a>
+        <li id="liMenu" class="navitem"><a href="documentation.html">documentation</a>
+        <li class="navitem"><a href="about.html">About</a>
+        <li class="navitem"><a href="home.html">Home</a>
+</nav>
