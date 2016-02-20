@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Main page of Table 20 project yeet</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<script src='{{url_for('static',filename = 'jquery-1.11.3.min.js')}}'></script>
-	
+
 </head>
 <body>
 	<!--#include virtual="index.part" -->
@@ -38,12 +43,12 @@
 		<form action="/votevotevote" method="post">
 			<input type="submit" name="votingbutton" formmethod="post" formaction="/votevotevote" value="{{left_object}}">
 		</form>
-		
+
 		<form action="/votevotevote" method="post">
 
 			<input type="submit" name="votingbutton" formmethod="post" formaction ="/votevotevote" value="{{right_object}}">
 		</form>
-		
+
 	</div>
 
 	<script src='{{url_for('static',filename = 'index.js')}}'></script>
