@@ -1,0 +1,32 @@
+﻿Merge branch 'sam' of https://github.com/starrynight56/WHACKSP2016 into ROSANNE
+
+Conflicts:
+	app/templates/index.html
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch ROSANNE
+# Your branch is up-to-date with 'origin/ROSANNE'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   app/elo.py
+#	new file:   app/forms.py
+#	renamed:    app/static/images/balloon.jpg -> app/static/img/balloon.jpg
+#	renamed:    app/static/images/confused.jpg -> app/static/img/confused.jpg
+#	renamed:    app/static/images/idea.jpg -> app/static/img/idea.jpg
+#	renamed:    app/static/images/scenery.jpg -> app/static/img/scenery.jpg
+#	renamed:    app/static/index.js -> app/static/js/index.js
+#	renamed:    app/static/jquery-1.11.3.min.js -> app/static/js/lib/jquery.js
+#	modified:   app/templates/index.html
+#	new file:   app/templates/layout.html
+#	modified:   application.py
+#
+

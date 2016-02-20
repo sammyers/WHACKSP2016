@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %}
+	<title>Ideation App - {{ title }}</title>
+	{% else %}
+	<title>Ideation App</title>
+	{% endif %}
+
+	<script src="{{ url_for('static', filename='js/lib/jquery.js') }}"></script>
+	
+</head>
+
+<body>
+{% block body %}{% endblock %}
+{% block scripts %}{% endblock %}
+</body>
+
+</html>

@@ -17,7 +17,7 @@ def objectvoting():
 	left_object = two_objects[0]
 	right_object = two_objects[1]
 	#then allow for clicking and choosing which one to vote
-	return render_template('index.html', left_object = left_object, right_object = right_object)
+	return render_template('index.html', left_object=left_object, right_object=right_object)
 
 @application.route('/votevotevote', methods = ['POST'])
 def votevotevote():
@@ -25,9 +25,11 @@ def votevotevote():
 
 	idea1 = str(request.form['votingbutton'])
 
-	return idea1
+	return redirect('/')
 
-
+@application.route('/add-data')
+def add_data():
+	return render_template('add_data.html')
 
 if (__name__ == '__main__'):
 	application.run(debug=True)
