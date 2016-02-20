@@ -4,7 +4,7 @@ application = Flask(__name__)
 
 @application.route('/')
 def index():
-	string = 'this is a string'
+	string = 'Hello World'
 	return render_template('index.html', hello=string)
 
 if __name__ == '__main__':
