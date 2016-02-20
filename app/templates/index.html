@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Main page of Table 20 project yeet</title>
-	<script src='{{url_for('static',filename = 'jquery-1.11.3.min.js')}}'></script>
-	
-</head>
-<body>
+{% extends "layout.html" %}
+
+{% set title = "Homepage" %}
+
+{% block body %}
 	<!--#include virtual="index.part" -->
     <!--    <nav>
 	    <img src="imagelinkhere.jpg" alt="logo" id="navfigure">
@@ -17,36 +14,38 @@
 	        <li class="navitem"><a href="home.html">Home</a>
 	</nav>
     -->
-	<div id="slideshowDiv">
+<div id="slideshowDiv">
 
-		<figure id="slideshow">
-			<img style="width: 100%" src="" alt="slideshow images">
-		</figure>
+	<figure id="slideshow">
+		<img style="width: 100%" src="" alt="slideshow images">
+	</figure>
 
-	</div>
+</div>
 
-	<div id="app">
-		<!--Where we are going to be using flask framework to utilize the app-->
-		<p>
-			{{ hello }}
-		</p>
-	</div>
+<div id="app">
+	<!--Where we are going to be using flask framework to utilize the app-->
+	<p>
+		{{ hello }}
+	</p>
+</div>
 
+<div>
+	<form action="/votevotevote" method="post">
+		<input type="submit" name="votingbutton" formmethod="post" formaction="/votevotevote" value="{{ left_object }}">
+	</form>
+	
+	<form action="/votevotevote" method="post">
 
+		<input type="submit" name="votingbutton" formmethod="post" formaction ="/votevotevote" value="{{ right_object }}">
+	</form>
+	
+</div>
 
-	<div>
-		<form action="/votevotevote" method="post">
-			<input type="submit" name="votingbutton" formmethod="post" formaction="/votevotevote" value="{{left_object}}">
-		</form>
-		
-		<form action="/votevotevote" method="post">
+<div id="submit">
+	<div>Submit an Idea</div>
+	
+</div>
 
-			<input type="submit" name="votingbutton" formmethod="post" formaction ="/votevotevote" value="{{right_object}}">
-		</form>
-		
-	</div>
-
-	<script src='{{url_for('static',filename = 'index.js')}}'></script>
-
-</body>
-</html>
+<script src="{{ url_for('static',filename = 'js/index.js') }}"></script>
+	
+{% endblock %}
