@@ -3,9 +3,15 @@
 #Picks the two relevant nodes from the database based on some criteria to give everything a chance.
 ideas = whack2016.query.all()
 ideas_ranked = db.session.query(whack2016).order_by(idea.votes.desc())
+factor = len(ideas)/4
+validIdeas = db.session.query.filter(Idea.passed < factor).all()
 
+#Things I want
+#drop all that have been rejecteded more than n times, when n is based on list length
+#vote on any 2 of the remaining, picking one randomly, and an adjacent one
 
-k = 30/(views.floor(10) +1)# effect of each result on scoring, dynamic based on number of views
+#define views
+k = 30 /( (views/10).floor() + 1)# effect of each result on scoring, dynamic based on number of views
 
 #should be a function to call from the database
 r1 = 10 #this should be the rating of some idea in the database.
