@@ -2,6 +2,7 @@ from models import Idea
 from database import db_session
 
 """ Expects to be able to find 2 ratings from the database """
+"""depricated"""
 
 #Picks the two relevant nodes from the database based on some criteria to give everything a chance.
 ideas = whack2016.query.all()
