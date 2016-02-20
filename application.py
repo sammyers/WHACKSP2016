@@ -7,5 +7,15 @@ def index():
 	string = 'this is a string'
 	return render_template('index.html', hello=string)
 
+@application.route('/voting')
+def ideavote():
+	#will pull two objects from the database
+	#then allow for clicking and choosing which one to vote
+	#after clicked, will run an algorithm that increments the vote as well as update ELO ratings
+	#will check to see if one of the objects has passed the upvote threshold
+	#if yes, then return rankings screen
+	#if no, then re-run this code
+
+
 if __name__ == '__main__':
 	application.run(debug=True)
