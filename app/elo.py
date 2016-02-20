@@ -2,9 +2,17 @@
 
 #Picks the two relevant nodes from the database based on some criteria to give everything a chance.
 ideas = whack2016.query.all()
-ideas_ranked = db.session.query(whack2016).order_by(idea.votes.desc())
+
+#ideas_ranked = db.session.query(whack2016).order_by(idea.votes.desc())
+
 factor = len(ideas)/4
-validIdeas = db.session.query.filter(Idea.passed < factor).all()
+validIdeas = db.session.query.filter(Idea.passed < factor).order_by(Idea.elo.asc()).all()
+#returns a list of all ideas that meet requirements, ordered by elo 
+
+names = [idea.name for idea in ideas] #how to get mah shit
+
+
+
 
 #Things I want
 #drop all that have been rejecteded more than n times, when n is based on list length
