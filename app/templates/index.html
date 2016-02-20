@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>Main page of Table 20 project yeet</title>
-	<script src="jquery-1.11.3.min.js"></script>
+	<script src='{{url_for('static',filename = 'jquery-1.11.3.min.js')}}'></script>
+	
 </head>
 <body>
 	<!--#include virtual="index.part" -->
@@ -31,6 +32,6 @@
 		</p>
 	</div>
 
-	<script src='../static/index.js'></script>
+	<script src='{{url_for('static',filename = 'index.js')}}'></script>
 </body>
 </html>
