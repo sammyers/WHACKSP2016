@@ -2,6 +2,7 @@ from flask import render_template, request, redirect, flash, session, url_for
 
 from flask_wtf import Form
 from app import application
+from app.database import db_session
 
 @application.route('/')
 def index():
@@ -21,11 +22,10 @@ def objectvoting():
 @application.route('/votevotevote', methods = ['POST'])
 def votevotevote():
 	#after clicked, will run an algorithm that increments the vote as well as update ELO ratings
+
 	idea1 = str(request.form['votingbutton'])
 
 	return idea1
-
-
 
 
 

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Main page of Table 20 project yeet</title>
+	<script src='{{url_for('static',filename = 'jquery-1.11.3.min.js')}}'></script>
+	
 </head>
 <body>
 	<!--#include virtual="index.part" -->
@@ -26,11 +28,10 @@
 	<div id="app">
 		<!--Where we are going to be using flask framework to utilize the app-->
 		<p>
-
-
 			{{ hello }}
 		</p>
 	</div>
+
 
 
 	<div>
@@ -44,5 +45,8 @@
 		</form>
 		
 	</div>
+
+	<script src='{{url_for('static',filename = 'index.js')}}'></script>
+
 </body>
 </html>
