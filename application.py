@@ -12,10 +12,10 @@ def index():
 @application.route('/objectvoting',methods = ['GET','POST'])
 def objectvoting():
 	#will pull two objects from the database
-	two_objects = ["chicken1","chicken2"]
+	two_objects = [("chicken1","chicken2"), ("chicken3, chicken2"),("chicken1", "chicken3")]
 	#two_objects = #Ian's method for two objects
-	left_object = two_objects[0]
-	right_object = two_objects[1]
+	left_object, right_object = two_objects[0]
+	two_objects
 	#then allow for clicking and choosing which one to vote
 	return render_template('index.html', left_object=left_object, right_object=right_object)
 
@@ -25,7 +25,16 @@ def votevotevote():
 
 	idea1 = str(request.form['votingbutton'])
 
+<<<<<<< HEAD
 	return redirect('/')
+=======
+	#increment voting for the winner
+
+	
+
+	return redirect("/objectvoting")
+
+>>>>>>> Kevin
 
 @application.route('/add-data')
 def add_data():
