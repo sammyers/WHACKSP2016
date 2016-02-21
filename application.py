@@ -27,6 +27,7 @@ def submit():
     return render_template('index.html',  form1=form1)
 
 
+
 @application.route('/v') # homepage URL endpoint
 def vote():
     string = 'Pick Between these 2 ideas'
