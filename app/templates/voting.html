@@ -14,7 +14,7 @@
 {% block scripts %}
 <script type="text/javascript">
 
-var ideas = {{ ideas }}
+var ideas = {{ ideas|safe }}
 
 </script>
 {% endblock %}

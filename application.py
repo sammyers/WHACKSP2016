@@ -32,7 +32,7 @@ def index():
 def vote():
     string = 'Pick Between these 2 ideas'
     db_ideas = Idea.query.all()
-    all_ideas = json.dumps({idea.id: idea.name for idea in db_ideas})
+    all_ideas = json.dumps({int(idea.id): str(idea.name) for idea in db_ideas})
     return render_template('voting.html', ideas=all_ideas)
 
 
