@@ -12,7 +12,7 @@
             <thead>
               <th>Rank</th>
               <th>Name</th>
-              <th>UpGoats</th>
+              <th>Votes</th>
             </thead>
             <tbody>
             {% for idea in lists %}
@@ -21,7 +21,7 @@
                 <td>
                   {{idea.name}}
                 </td>
-                <td>{{idea.passes}}</td>
+                <td>{{idea.votes}}</td>
               </tr>
             {% endfor %}
             </tbody>

@@ -14,7 +14,11 @@ application.debug = True
 class MyForm(Form):
     name = StringField('submit new idea', validators=[DataRequired()])
 
-@application.route('/', methods=['GET', 'POST'])
+@application.route('/')
+def landingpage():
+    return render_template('landingpage.html')
+
+@application.route('/submit', methods=['GET', 'POST'])
 def index():
     form1 = MyForm(request.form)
     if request.method == 'POST' and form1.validate_on_submit():
@@ -24,7 +28,7 @@ def index():
         db_session.add(new_idea)
         db_session.commit()
         
-        return redirect('/')
+        return redirect('/submit')
     return render_template('index.html',  form1=form1)
 
 
@@ -38,7 +42,7 @@ def vote():
 
 @application.route('/rankings') # homepage URL endpoint
 def ratings():
-    sorted_ideas = Idea.query.order_by(Idea.passes.asc()).all()
+    sorted_ideas = Idea.query.order_by(Idea.votes.desc()).all()
 
     return render_template('rating.html', lists=sorted_ideas)
 
@@ -50,7 +54,7 @@ def about():
 
 @application.route('/voteincrement', methods=['POST'])
 def voteincrement():
-    idea_id = request.get_json(force=True)['idea']
+    idea = request.get_json(force=True)['idea']
     db_object = Idea.query.filter_by(name=idea).first()
     db_object.votes += 1
     db_session.commit()
