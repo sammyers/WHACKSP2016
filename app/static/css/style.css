@@ -1,0 +1,45 @@
+/*
+FILE NAME: style.css
+WRITTEN BY: Table 20
+DATE: feb 2016
+PURPOSE: WHACK Project
+*/
+
+.button {
+
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #d3dbe0;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 47%;
+  height: 100%;
+
+
+}
+#peet {
+    float: right;
+    margin-top: -45.2%;
+}
+
+.button:hover {
+    background: #c9c9c9;
+ background-image: -webkit-linear-gradient(top, #c9c9c9, #4d524c);
+ background-image: -moz-linear-gradient(top, #c9c9c9, #4d524c);
+ background-image: -ms-linear-gradient(top, #c9c9c9, #4d524c);
+ background-image: -o-linear-gradient(top, #c9c9c9, #4d524c);
+ background-image: linear-gradient(to bottom, #c9c9c9, #4d524c);
+ text-decoration: none;
+}
+
+.button:active{
+      background: #c9c9c9;
+      background-image: -webkit-linear-gradient(top, #c9c9c9, #42db0f);
+      background-image: -moz-linear-gradient(top, #c9c9c9, #42db0f);
+      background-image: -ms-linear-gradient(top, #c9c9c9, #42db0f);
+      background-image: -o-linear-gradient(top, #c9c9c9, #42db0f);
+      background-image: linear-gradient(to bottom, #c9c9c9, #42db0f);
+      text-decoration: none;
+}
+
