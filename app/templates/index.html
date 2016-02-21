@@ -14,23 +14,15 @@
 	        <li class="navitem"><a href="home.html">Home</a>
 	</nav>
     -->
-<!-- 
-<div id="app">
-	Where we are going to be using flask framework to utilize the app
+
+<!-- <div id="app">
 	<p>
 		{{ hello }}
 	</p>
 </div> -->
 
 <div>
-<!-- 	<form action="/votevotevote" method="post">
-		<input type="submit" name="votingbutton" formmethod="post" formaction="/votevotevote" value="{{ left_object }}">
-	</form>
-	
-	<form action="/votevotevote" method="post">
 
-		<input type="submit" name="votingbutton" formmethod="post" formaction ="/votevotevote" value="{{ right_object }}">
-	</form> -->
 	<form method="POST" action="">
 	    {{ form1.csrf_token }}
 	    {{ form1.name.label }} {{ form1.name(size=20) }}

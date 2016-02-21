@@ -24,9 +24,20 @@ def submit():
         db_session.commit()
         
         return redirect('/s')
-    return render_template('index.html', form1=form1)
+    return render_template('index.html',  form1=form1)
 
 
+@application.route('/v') # homepage URL endpoint
+def vote():
+    string = 'Pick Between these 2 ideas'
+    all_ideas = Idea.query.all()
+    idea1_id = random.randrange(0,len(all_ideas),1)
+    idea2_id = random.randrange(0,len(all_ideas),1)
+    while idea1_id == idea2_id:
+        idea2_id = random.randrange(0,len(all_ideas),1)
+    idea1 = all_ideas[idea1_id]
+    idea2 = all_ideas[idea2_id]
+    return render_template('voting.html', idea1=idea1, idea2=idea2)
 
 
 
@@ -53,21 +64,7 @@ def objectvoting():
 										 voting=voting,
 										 submission=submission)
 
-@application.route('/votevotevote', methods = ['POST'])
-def votevotevote():
-	#after clicked, will run an algorithm that increments the vote as well as update ELO ratings
 
-	idea1 = str(request.form['votingbutton'])
-
-
-	return redirect('/')
-	#increment voting for the winner
-
-	
-
-	return redirect("/objectvoting")
-
-	return redirect('/')
 
 
 @application.route('/add-data')
