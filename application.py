@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, flash, session, url_for
+from flask import render_template, request, redirect, flash, session, url_for, jsonify
 from flask_wtf import Form
 from wtforms import StringField
 from wtforms.validators import DataRequired
@@ -46,25 +46,19 @@ def ratings():
 @application.route('/about')
 def about():
     return render_template('about.html')
+@application.route('/l')
+def landingpage():
+    return render_template('landingpage.html')
 
 
-@application.route('/objectvoting',methods = ['GET','POST'])
-def objectvoting():
-    voting = VoteForm(request.form)
-    submission = SubmitForm(request.form)
-    all_ideas = Idea.query.all()
-    #two_objects = #Ian's method for two objects
-    left_object = random.choice(all_ideas)
-    right_object = random.choice(all_ideas)
-    while left_object == right_object:
-        right_object = random.choice(all_ideas)
-    #then allow for clicking and choosing which one to vote
-    return render_template('index.html', left_object=left_object, 
-                                         right_object=right_object,
-                                         voting=voting,
-                                         submission=submission)
-
-
+@application.route('/voteincrement', methods=['POST'])
+def voteincrement():
+    idea_id = request.form['idea']
+    db_object = Idea.query.filter_by(name=idea).first()
+    db_object.votes += 1
+    db_session.commit()
+    data = jsonify(message='Transaction successful')
+    return data
 
 if __name__ == '__main__':
     application.run(debug=True)
