@@ -46,31 +46,31 @@ def vote():
 
 @application.route('/') # homepage URL endpoint
 def index():
-	string = 'Hello World'
-	return render_template('index.html', hello=string)
+    string = 'Hello World'
+    return render_template('index.html', hello=string)
 
 @application.route('/objectvoting',methods = ['GET','POST'])
 def objectvoting():
-	voting = VoteForm(request.form)
-	submission = SubmitForm(request.form)
-	all_ideas = Idea.query.all()
-	#two_objects = #Ian's method for two objects
-	left_object = random.choice(all_ideas)
-	right_object = random.choice(all_ideas)
-	while left_object == right_object:
-		right_object = random.choice(all_ideas)
-	#then allow for clicking and choosing which one to vote
-	return render_template('index.html', left_object=left_object, 
-										 right_object=right_object,
-										 voting=voting,
-										 submission=submission)
+    voting = VoteForm(request.form)
+    submission = SubmitForm(request.form)
+    all_ideas = Idea.query.all()
+    #two_objects = #Ian's method for two objects
+    left_object = random.choice(all_ideas)
+    right_object = random.choice(all_ideas)
+    while left_object == right_object:
+        right_object = random.choice(all_ideas)
+    #then allow for clicking and choosing which one to vote
+    return render_template('index.html', left_object=left_object, 
+                                         right_object=right_object,
+                                         voting=voting,
+                                         submission=submission)
 
 
 
 
 @application.route('/add-data')
 def add_data():
-	return render_template('add_data.html')
+    return render_template('add_data.html')
 
 if __name__ == '__main__':
-	application.run(debug=True)
+    application.run(debug=True)
