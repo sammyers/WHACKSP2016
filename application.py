@@ -25,16 +25,13 @@ def votevotevote():
 
 	idea1 = str(request.form['votingbutton'])
 
-<<<<<<< HEAD
+
 	return redirect('/')
-=======
 	#increment voting for the winner
 
 	
 
 	return redirect("/objectvoting")
-
->>>>>>> Kevin
 
 @application.route('/add-data')
 def add_data():
