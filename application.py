@@ -46,6 +46,9 @@ def ratings():
 @application.route('/about')
 def about():
     return render_template('about.html')
+@application.route('/l')
+def landingpage():
+    return render_template('landingpage.html')
 
 
 @application.route('/voteincrement', methods=['POST'])
