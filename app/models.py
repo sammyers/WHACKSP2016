@@ -15,7 +15,7 @@ class Idea(Base):
     def __init__(self, name=None, elo=1000, votes=0, views=0, passes=0):
         self.name = name
         self.elo = elo
-	self.votes = votes
+        self.votes = votes
         self.views = views
         self.passes = passes
 
