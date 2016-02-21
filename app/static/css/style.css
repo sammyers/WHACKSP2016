@@ -3,8 +3,19 @@ FILE NAME: style.css
 WRITTEN BY: Table 20
 DATE: feb 2016
 PURPOSE: WHACK Project
+no t git
 */
+#container{
+    width: inherit;
+    overflow: hidden;
+}
 
+#container2{
+    text-align: left;
+    position: absolute;
+    top: -1000px;
+    overflow: hidden;
+}
 .button {
 
   font-family: Arial;
@@ -13,15 +24,26 @@ PURPOSE: WHACK Project
   background: #d3dbe0;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  width: 47%;
+  width: 46.8%;
   height: 100%;
+  word-wrap: normal;
 
 
 }
-#peet {
+#text2,#text4 {
     float: right;
-    margin-top: -45.2%;
+    position:relative;
+
+
 }
+
+
+#text1,#text3 {
+    position:absolute;
+}
+
+
+
 
 .button:hover {
     background: #c9c9c9;
@@ -32,7 +54,6 @@ PURPOSE: WHACK Project
  background-image: linear-gradient(to bottom, #c9c9c9, #4d524c);
  text-decoration: none;
 }
-
 .button:active{
       background: #c9c9c9;
       background-image: -webkit-linear-gradient(top, #c9c9c9, #42db0f);
@@ -41,5 +62,6 @@ PURPOSE: WHACK Project
       background-image: -o-linear-gradient(top, #c9c9c9, #42db0f);
       background-image: linear-gradient(to bottom, #c9c9c9, #42db0f);
       text-decoration: none;
-}
 
+      }
+      /*translation anitmation*/
