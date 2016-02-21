@@ -3,10 +3,18 @@
 {% block body %}
 <body>
     <div class="button" id="yeet">
-            {{idea1.name}}
+            
     </div>
     <div class="button" id="peet">
-            {{idea2.name}}
+            
     </div>
 </body>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+
+var ideas = {{ ideas }}
+
+</script>
 {% endblock %}
