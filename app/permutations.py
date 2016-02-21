@@ -12,3 +12,7 @@ def combine(vals):
     print values
 
 combine(names)
+<<<<<<< HEAD
+=======
+#print(itertools.combinations(['test','test2','test3','test4','test5','test6','test7','test8'], 2))
+>>>>>>> 12cec98303573e94c9f9574ea5d751a282460923

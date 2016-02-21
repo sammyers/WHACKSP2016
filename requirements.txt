@@ -4,3 +4,6 @@ MarkupSafe==0.23
 SQLAlchemy==1.0.12
 Werkzeug==0.11.4
 itsdangerous==0.24
+Flask-WTF==0.12
+requests==2.9.1
+WTForms==2.1
