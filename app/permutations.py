@@ -1,6 +1,7 @@
+"""Depricated"""
 ''' Returns a list of all posible combinations'''
-from models import Idea
 from database import db_session
+from models import Idea
 import itertools
 
 ideas = Idea.query.all()
