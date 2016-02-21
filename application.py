@@ -11,14 +11,20 @@ import random
 application.secret_key = '23456787654'
 
 class MyForm(Form):
-    name = StringField('name', validators=[DataRequired()])
+    name = StringField('submit new idea', validators=[DataRequired()])
 
 @application.route('/s', methods=('GET', 'POST'))
 def submit():
-    form = MyForm()
-    if form.validate_on_submit():
+    form1 = MyForm()
+    if form1.validate_on_submit():
         return redirect('/s')
-    return render_template('index.html', form=form)
+    return render_template('index.html', form1=form1)
+
+
+
+
+
+
 
 @application.route('/') # homepage URL endpoint
 def index():
