@@ -46,14 +46,11 @@ def ratings():
 @application.route('/about')
 def about():
     return render_template('about.html')
-@application.route('/l')
-def landingpage():
-    return render_template('landingpage.html')
 
 
 @application.route('/voteincrement', methods=['POST'])
 def voteincrement():
-    idea_id = request.form['idea']
+    idea_id = request.get_json(force=True)['idea']
     db_object = Idea.query.filter_by(name=idea).first()
     db_object.votes += 1
     db_session.commit()

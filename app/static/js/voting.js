@@ -8,6 +8,8 @@ var testing = [(1,2),(3,4),(4,5)];
 var index = 0;
 var combos = [];
 
+$.support.cors = true;
+
 $(document).ready(function(){
 
 	var jsonlist = ideas
@@ -59,12 +61,13 @@ function updatevote(winner){
 	$.ajax({
 		type: "POST",
 		url: "/voteincrement",
-		data: {idea: winner},
+		data: JSON.stringify({
+			idea: winner
+		}), 
 		contentType: "application/json",
 		dataType: "json"
 	}).done(function(response){
 		console.log(response);
-		pairvoting(combos);
 	});//use ajax to change value of winner;
 }
 
