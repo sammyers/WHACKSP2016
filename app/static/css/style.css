@@ -6,14 +6,15 @@ PURPOSE: WHACK Project
 */
 
 body{
+
   padding-top: 50px;
+  background: url(../img/texture.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
-.starter-template{
-  text-align: center;
-}
-.jank-table{
-  float: center;
-}
+
 .button {
   text-align: center;
   text-decoration: none;
