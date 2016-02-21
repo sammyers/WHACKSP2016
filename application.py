@@ -46,8 +46,7 @@ def vote():
 
 @application.route('/') # homepage URL endpoint
 def index():
-    string = 'Hello World'
-    return render_template('index.html', hello=string)
+    return redirect('/v')
 
 @application.route('/objectvoting',methods = ['GET','POST'])
 def objectvoting():
