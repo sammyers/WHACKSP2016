@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <body>
+    
+    <div class="container">
+      <div class="starter-template">
+        <p class="lead" style="font-size:40px"><b>G.O.A.T. (Greatest of All Time)</b></p>
+        <table class="jank-table" style="font-size:30px">
+          <thead>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>UpGoats</th>
+          </thead>
+          <tbody>
+          {% for idea in lists %}
+            <tr>
+              <td>{{loop.index}}</td>
+              <td>
+                {{idea.name}}
+              </td>
+              <td>{{idea.id}}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </body>
+</html>
