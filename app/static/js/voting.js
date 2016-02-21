@@ -14,8 +14,10 @@ $(document).ready(function(jsonlist){
 	for(i = 0; i < Object.keys(jsonlist).length-1; i++){
 		for(k = i+1; k < Object.keys(jsonlist).length; k++){
 			var pair = [0,0];
-			pair[0] = jsonlist[i];
-			pair[1] = jsonlist[k];
+
+			pair[0] = jsonlist[Object.keys(jsonlist)[i]];
+			pair[1] = jsonlist[Object.keys(jsonlist)[k]];
+
 			combos.push(pair);
 
 		}
@@ -29,10 +31,12 @@ var pairvoting = function (combinations){
 
 
 	if(index >= combinations.length){
+		combos = [];
 		windows.location.href="/rankings";
 	} 
-	var lefthtml = combination[i][0];
-	var righthtml = combination[i][1];
+
+	var lefthtml = combination[index][0];
+	var righthtml = combination[index][1];
 
 	document.getElementById("yeet").innerHTML = lefthtml;
 	document.getElementById("peet").innerHTML = righthtml;
@@ -45,11 +49,15 @@ var pairvoting = function (combinations){
 
 var update = function(winner){
 
+	//use ajax to change value of winner;
 
 	pairvoting(combos);
 
 
 }
+
+
+
 
 $("#yeet").click(update(document.getElementById("yeet").innerHTML));
 $("#peet").click(update(document.getElementById("peet").innerHTML));
