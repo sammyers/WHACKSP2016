@@ -31,7 +31,7 @@
 
 		<input type="submit" name="votingbutton" formmethod="post" formaction ="/votevotevote" value="{{ right_object }}">
 	</form> -->
-	<form method="POST" action="/">
+	<form method="POST" action="">
 	    {{ form1.csrf_token }}
 	    {{ form1.name.label }} {{ form1.name(size=20) }}
 	    <input type="submit" value="Go">

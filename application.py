@@ -13,10 +13,16 @@ application.secret_key = '23456787654'
 class MyForm(Form):
     name = StringField('submit new idea', validators=[DataRequired()])
 
-@application.route('/s', methods=('GET', 'POST'))
+@application.route('/s', methods=['GET', 'POST'])
 def submit():
-    form1 = MyForm()
-    if form1.validate_on_submit():
+    form1 = MyForm(request.form)
+    if request.method == 'POST' and form1.validate_on_submit():
+        new_idea_str = form1.name.data
+        new_idea = Idea(new_idea_str)
+
+        db_session.add(new_idea)
+        db_session.commit()
+        
         return redirect('/s')
     return render_template('index.html', form1=form1)
 
