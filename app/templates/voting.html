@@ -18,9 +18,9 @@
 {% endblock %}
 
 {% block scripts %}
-<script type="text/javascript">
-
+<script type="text/javascript"> 
 var ideas = {{ ideas|safe }}
-
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/voting.js') }}">
 </script>
 {% endblock %}

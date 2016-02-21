@@ -8,9 +8,9 @@ var testing = [(1,2),(3,4),(4,5)];
 var index = 0;
 var combos = [];
 
-$(document).ready(function(jsonlist){
+$(document).ready(function(){
 
-	
+	var jsonlist = ideas
 	for(i = 0; i < Object.keys(jsonlist).length-1; i++){
 		for(k = i+1; k < Object.keys(jsonlist).length; k++){
 			var pair = [0,0];
@@ -25,39 +25,46 @@ $(document).ready(function(jsonlist){
 
 	pairvoting(combos);
 
+	
+	$("#yeet").click(function(){
+		updatevote($("#yeet").text());
+		pairvoting(combos);
+	});
+
+	$("#peet").click(function(){
+		updatevote($("#peet").text());
+		pairvoting(combos);
+	});
+
 });
 
-var pairvoting = function (combinations){
+function pairvoting(combinations){
 
+	var lefthtml = combinations[index][0];
+	var righthtml = combinations[index][1];
 
-	if(index >= combinations.length){
-		combos = [];
-		windows.location.href="/rankings";
-	} 
-
-	var lefthtml = combination[index][0];
-	var righthtml = combination[index][1];
-
-	document.getElementById("yeet").innerHTML = lefthtml;
-	document.getElementById("peet").innerHTML = righthtml;
+	$("#yeet").text(lefthtml);
+	$("#peet").text(righthtml);
 
 	index++;
 
-
-	
+	if(index >= combinations.length){
+		combos = [];
+		window.location.href="/rankings";
+	} 	
 }
 
-var update = function(winner){
+function updatevote(winner){
 
-	//use ajax to change value of winner;
-
-	pairvoting(combos);
-
-
+	$.ajax({
+		type: "POST",
+		url: "/voteincrement",
+		data: {idea: winner},
+		contentType: "application/json",
+		dataType: "json"
+	}).done(function(response){
+		console.log(response);
+		pairvoting(combos);
+	});//use ajax to change value of winner;
 }
 
-
-
-
-$("#yeet").click(update(document.getElementById("yeet").innerHTML));
-$("#peet").click(update(document.getElementById("peet").innerHTML));
