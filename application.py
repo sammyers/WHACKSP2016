@@ -13,7 +13,7 @@ application.secret_key = '23456787654'
 class MyForm(Form):
     name = StringField('submit new idea', validators=[DataRequired()])
 
-@application.route('/s', methods=['GET', 'POST'])
+@application.route('/submit', methods=['GET', 'POST'])
 def submit():
     form1 = MyForm(request.form)
     if request.method == 'POST' and form1.validate_on_submit():
@@ -28,7 +28,7 @@ def submit():
 
 
 
-@application.route('/v') # homepage URL endpoint
+@application.route('/voting') # homepage URL endpoint
 def vote():
     string = 'Pick Between these 2 ideas'
     all_ideas = Idea.query.all()
@@ -41,6 +41,11 @@ def vote():
     return render_template('voting.html', idea1=idea1, idea2=idea2)
 
 
+@application.route('/ratings') # homepage URL endpoint
+def ratings():
+    sorted_ideas = Idea.query.order_by(Idea.passes.asc()).all()
+
+    return render_template('rating.html', lists=sorted_ideas)
 
 
 
