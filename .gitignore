@@ -1,5 +1,10 @@
 *.pyc
 constants.py
+application_BACKUP_4396.py
+application_BASE_4396.py
+application_LOCAL_4396.py
+application_REMOTE_4396.py
+
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
