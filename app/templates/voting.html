@@ -1,16 +1,12 @@
 {% extends "layout.html" %}
 
-{% set title = "Vote" %}
-
 {% block body %}
-
-<div>
-    <p>
-        {{idea1.name}}
-    </p>
-    <p>
-        {{idea2.name}}
-    </p>
-</div>
-
-{{ endblock }}
+<body>
+    <div class="button" id="yeet">
+            {{idea1.name}}
+    </div>
+    <div class="button" id="peet">
+            {{idea2.name}}
+    </div>
+</body>
+{% endblock %}

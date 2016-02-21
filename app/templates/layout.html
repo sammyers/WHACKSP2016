@@ -8,13 +8,13 @@
 	{% endif %}
 
 	<script src="{{ url_for('static', filename='js/lib/jquery.js') }}"></script>
-	
+	<link rel="stylesheet" type="text/css" href='{{ url_for('static', filename='css/style.css') }}'></link>
 </head>
 
 <body>
 	<div id="navbar">
 		<ul class="navbar-div">
-			<li {% if request.path == "/vote" %}style="display:none;"{% endif %}><a href="/">Vote</a></li>
+			<li {% if request.path == "/vote" %}style="display:none;"{% endif %}><a href="/vote">Vote</a></li>
 			<li {% if request.path == "/rankings" %}style="display:none;"{% endif %}><a href="/rankings">Rankings</a></li>
 			<li {% if request.path == "/about" %}style="display:none;"{% endif %}><a href="/about">About</a></li>
 		</ul>

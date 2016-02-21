@@ -9,6 +9,7 @@ from app.models import Idea
 import random
 
 application.secret_key = '23456787654'
+application.debug = True
 
 class MyForm(Form):
     name = StringField('submit new idea', validators=[DataRequired()])
