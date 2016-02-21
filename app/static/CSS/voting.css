@@ -5,27 +5,34 @@ DATE: feb 2016
 PURPOSE: WHACK Project
 */
 
-button {
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
+.button {
+
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
   background: #d3dbe0;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  width: 50%
+  width: 46%;
+  height: 590px;
+
+
 }
-peet {
-    float: left
+#peet {
+    float: right;
 }
 
-button:hover {
+.button:hover {
   background: #cfcfcf;
   text-decoration: none;
 }
 
-button:click{
-
+.button:active{
+      background: #c9c9c9;
+      background-image: -webkit-linear-gradient(top, #c9c9c9, #38cc12);
+      background-image: -moz-linear-gradient(top, #c9c9c9, #38cc12);
+      background-image: -ms-linear-gradient(top, #c9c9c9, #38cc12);
+      background-image: -o-linear-gradient(top, #c9c9c9, #38cc12);
+      background-image: linear-gradient(to bottom, #c9c9c9, #38cc12);
+      text-decoration: none;
 }
