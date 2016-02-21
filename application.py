@@ -6,7 +6,7 @@ from app import application
 from app.database import db_session
 from app.forms import VoteForm, SubmitForm
 from app.models import Idea
-import random
+import random, json
 
 application.secret_key = '23456787654'
 application.debug = True
@@ -31,14 +31,9 @@ def index():
 @application.route('/vote') # homepage URL endpoint
 def vote():
     string = 'Pick Between these 2 ideas'
-    all_ideas = Idea.query.all()
-    idea1_id = random.randrange(0,len(all_ideas),1)
-    idea2_id = random.randrange(0,len(all_ideas),1)
-    while idea1_id == idea2_id:
-        idea2_id = random.randrange(0,len(all_ideas),1)
-    idea1 = all_ideas[idea1_id]
-    idea2 = all_ideas[idea2_id]
-    return render_template('voting.html', idea1=idea1, idea2=idea2)
+    db_ideas = Idea.query.all()
+    all_ideas = json.dumps({int(idea.id): str(idea.name) for idea in db_ideas})
+    return render_template('voting.html', ideas=all_ideas)
 
 
 @application.route('/rankings') # homepage URL endpoint
