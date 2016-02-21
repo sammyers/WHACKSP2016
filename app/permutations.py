@@ -1,15 +1,21 @@
+"""Depricated"""
 ''' Returns a list of all posible combinations'''
-from models import Idea
 from database import db_session
+from models import Idea
 import itertools
 
 ideas = Idea.query.all()
 
 names = [idea.name for idea in ideas]
+ids = [idea.id for idea in ideas]
 
-def combine(vals):
-    values = list(itertools.combinations(vals,2))
-    print values
+def giveNames():
+    for i in range(len(names)):
+        res = res.append(list(names[i] + ids[i]))
+
+# def combine(vals):
+#     values = list(itertools.combinations(vals,2))
+#     print values
 
 # def combinations(iterable, r):
 #     # combinations('ABCD', 2) --> AB AC AD BC BD CD
@@ -31,5 +37,5 @@ def combine(vals):
 #             indices[j] = indices[j-1] + 1
 #         yield list(pool[i] for i in indices) #uses list not tuple
 
-combine(names)
+# combine(names)
 
