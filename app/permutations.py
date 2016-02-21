@@ -6,7 +6,7 @@ print(1)
 ideas = Idea.query.all()
 print(2)
 
-#names = [idea.name for idea in ideas]
+names = [idea.name for idea in ideas]
 
 # def combinations(iterable, r):
 #     # combinations('ABCD', 2) --> AB AC AD BC BD CD
@@ -32,5 +32,5 @@ def combine(vals):
     values = list(itertools.combinations(vals,2))
     print values
 
-combine(inputin)
+combine(names)
 #print(itertools.combinations(['test','test2','test3','test4','test5','test6','test7','test8'], 2))
