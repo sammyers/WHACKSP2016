@@ -1,16 +1,21 @@
-{% extends "layout.html" %}
+<!--
+FILE NAME: voting.html
+WRITTEN BY: Table 20
+DATE: feb 2016
+PURPOSE: WHACK Project
+-->
+<html>
+<head>
+    <title>voting</title>
+    <link href='../static/CSS/voting.css' rel="stylesheet"></link>
+</head>
+<body>
+    <div class = button id = yeet>
+            {{idea1.name}}
+    </div>
+    <div class = button id= peet>
+            {{idea2.name}}
 
-{% set title = "Vote" %}
-
-{% block body %}
-
-<div>
-    <p>
-        {{idea1.name}}
-    </p>
-    <p>
-        {{idea2.name}}
-    </p>
-</div>
-
-{% endblock %}
+    </div>
+</body>
+</html>
