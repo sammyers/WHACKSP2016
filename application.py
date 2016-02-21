@@ -1,10 +1,24 @@
 from flask import render_template, request, redirect, flash, session, url_for
 from flask_wtf import Form
+from wtforms import StringField
+from wtforms.validators import DataRequired
 from app import application
 from app.database import db_session
 from app.forms import VoteForm, SubmitForm
 from app.models import Idea
 import random
+
+application.secret_key = '23456787654'
+
+class MyForm(Form):
+    name = StringField('name', validators=[DataRequired()])
+
+@application.route('/s', methods=('GET', 'POST'))
+def submit():
+    form = MyForm()
+    if form.validate_on_submit():
+        return redirect('/s')
+    return render_template('index.html', form=form)
 
 @application.route('/') # homepage URL endpoint
 def index():

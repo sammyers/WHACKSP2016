@@ -14,47 +14,31 @@
 	        <li class="navitem"><a href="home.html">Home</a>
 	</nav>
     -->
-<div id="slideshowDiv">
-
-	<figure id="slideshow">
-		<img style="width: 100%" src="" alt="slideshow images">
-	</figure>
-
-
-</div>
-
-
-</div>
-
-	<div>
-		<form action="/objectvoting">
-			<input type="submit" value="click here to do the boogie">
-		</form>
-	</div>		
-
+<!-- 
 <div id="app">
-	<!--Where we are going to be using flask framework to utilize the app-->
+	Where we are going to be using flask framework to utilize the app
 	<p>
 		{{ hello }}
 	</p>
-</div>
+</div> -->
 
 <div>
-	<form action="/votevotevote" method="post">
+<!-- 	<form action="/votevotevote" method="post">
 		<input type="submit" name="votingbutton" formmethod="post" formaction="/votevotevote" value="{{ left_object }}">
 	</form>
 	
 	<form action="/votevotevote" method="post">
 
 		<input type="submit" name="votingbutton" formmethod="post" formaction ="/votevotevote" value="{{ right_object }}">
+	</form> -->
+	<form method="POST" action="/">
+	    {{ form.csrf_token }}
+	    {{ form.name.label }} {{ form.name(size=20) }}
+	    <input type="submit" value="Go">
 	</form>
 	
 </div>
 
-<div id="submit">
-	<div>Submit an Idea</div>
-	
-</div>
 
 <script src="{{ url_for('static',filename = 'js/index.js') }}"></script>
 	
