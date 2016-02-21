@@ -13,7 +13,13 @@ body{
     background-size: cover;
     -o-background-size: cover;
 }
+.about{
+  text-align: center;
+  padding:50px 50px 50px 50px;
 
+
+
+}
 .button {
   text-align: center;
   text-decoration: none;
@@ -24,12 +30,10 @@ body{
   padding: 10px 20px 10px 20px;
   height: 768px;
 
-
-
-  
-
-
-
+}
+.submission{
+  text-align:center;
+  padding: 50px 50px 50px 50px;
 }
 
 .button:hover {
