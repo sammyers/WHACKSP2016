@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, flash, session, url_for
-from flask_wtf import Form
+from flask.ext.wtf import Form
 from app import application
 from app.database import db_session
 from app.forms import VoteForm, SubmitForm
